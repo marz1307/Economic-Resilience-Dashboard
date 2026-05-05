@@ -1,0 +1,36 @@
+# Internal logs (do not ship)
+AUDIT.md
+CORRECTIONS.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Power BI temp
+*.pbix.bak
+~$*.pbix
+
+# Excel temp
+~$*.xlsx
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp

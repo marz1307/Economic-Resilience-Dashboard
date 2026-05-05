@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "er-dashboard"
+version = "0.1.0"
+description = "Validator for the Economic Resilience Snapshot Power BI dashboard data assets."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marvis Osazuwa" }]
+keywords = ["power-bi", "dashboard", "macroeconomics", "world-bank", "data-validation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "ruff>=0.5",
+    "black>=24",
+]
+
+[project.scripts]
+validate-er-data = "er_dashboard.validate:main"
+
+[project.urls]
+Homepage = "https://marz1307.github.io"
+LinkedIn = "https://www.linkedin.com/in/marvisosazuwa"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
